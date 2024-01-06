@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="module" src="/assets/js/main/cars.js"></script>
+    <script src="assets/js/main/modal.js" defer></script>
+    <script src="assets/js/main/Carstore.js" type="module"></script>
+    <!-- <script src="/assets/js/main/Carstore.js" type="module"></script> -->
 
     </head>
     
@@ -63,6 +66,60 @@
                                 </div>
                             </li>
                             <li><a href="contact.html">Contact</a></li> 
+                                <button id="myBtn" class="btn">Add Cars</button>
+                                <!-- The Modal -->
+                                <div class="container">
+                                            <div class="alert alert-success d-none" role="alert"></div>
+                                            <div class="alert-error alert-danger d-none" role="alert"></div>
+                                            <form id="signUpForm">
+                                                <div id="myModal" class="modal">
+                                                    <!-- Modal content -->
+                                                    <div class="modal-content">
+                                                        <h5 class="modal-title">Cars Edit</h5>
+                                                        <span class="close" id="modal_close">&times;</span>
+                                                        <input type="hidden" name="branch_id" id="branch_id">           
+                                                <div class="user">Manufacturer</div>
+                                                <div id="name" class="input-box">
+                                                    <input type="text" name="manufacturer" id="manufacturer" placeholder="Enter Manufacturer"> <br>
+                                                    <div class="error"></div>
+                                                </div>
+
+                                                <div class="user">Model</div>
+                                                <div id="name" class="input-box">
+                                                    <input type="text" name="model" id="model" placeholder="Enter Model"> <br>
+                                                    <div class="error"></div>
+                                                </div>
+
+                                                <div class="user">Price</div>
+                                                <div id="name" class="input-box">
+                                                    <input type="text" name="price" id="price" placeholder="Enter Price"> <br>
+                                                    <div class="error"></div>
+                                                </div>
+
+                                                <div class="user">Vin</div>
+                                                <div id="name" class="input-box">
+                                                    <input type="text" name="vin" id="vin" placeholder="Enter Vin"> <br>
+                                                    <div class="error"></div>
+                                                </div>
+
+                                                <div class="user">Description</div>
+                                                <div id="name" class="input-box">
+                                                    <input type="text" name="description" id="description" placeholder="Enter the Car's Description"> <br>
+                                                    <div class="error"></div>
+                                                </div>
+                                                
+                                                <div class="user">ImageURL</div>
+                                                <div id="pass" class="input-box btn1">
+                                                    <input type="file" name="imageURL" id="imageURL" ><br>
+                                                    <div class="error"></div>
+                                                </div>
+                                                
+                                                <button type="submit" class="but">Submit</button>
+                                                <br>
+                                            </div>
+                                        </div> 
+                                            </form>
+                                        </div>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

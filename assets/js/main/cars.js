@@ -17,6 +17,9 @@ async function getCar(){
         json.forEach(element => {
             container += `<div class="col-lg-4">
                 <div class="trainer-item">
+                <div class="image-thumb">
+                        
+                    </div>
                     <div class="image-thumb">
                         <img src="${url}/storage/${element.imageURL}">
                     </div>
@@ -37,7 +40,7 @@ async function getCar(){
                             <i class="fa fa-dashboard"></i> ${element.vin} &nbsp;&nbsp;&nbsp;
                         </p>
                 
-                        <h4>${element.description}</h4>
+                        <h4 class="des">${element.description}</h4>
                 
                         <ul class="social-icons">
                             <li><a href="car-details.html">+ View Car</a></li>
@@ -55,3 +58,5 @@ async function getCar(){
         alert(json.message)
     }
 }
+
+export {getCar};

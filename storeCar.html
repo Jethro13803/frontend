@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Register</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Template Main CSS File -->
+
+  <link href="assets/css/register.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+  <script src="assets/js/main/Carstore.js" type="module"></script>
+
+  
+</head>
+
+<body>
+  
+  <!----------Registration Form--------->
+
+  <div class="container">
+    <div class="title">Add Car</div>
+
+    <div class="alert alert-success d-none" role="alert"></div>
+    <div class="alert-error alert-danger d-none" role="alert"></div>
+
+    <!-- <div class="alert success d-none" id="popup"></div>
+      <div class="alert-error Error d-none" id="popup"></div> -->
+    <div class="content">
+      <form id="signUpForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Manufacturer</span>
+            <input type="text" id="manufacturer" name="manufacturer" placeholder="Enter your last name" >
+              <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Model</span>
+            <input type="text" id="model" name="model" placeholder="Enter your first name" >
+            <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Price</span>
+            <input type="text" id="price" name="price" placeholder="Enter your middle name">
+            <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Vin</span>
+            <input type="text" id="vin" name="vin" placeholder="Enter your email" >
+            <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">ImageURL</span>
+            <input type="file" id="imageURL" name="imageURL" placeholder="Enter your email" accept="image/x-png,image/gif,image/jpeg" />
+            <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Description</span>
+            <input type="text" id="description" name="description" placeholder="Enter your number" >
+            <div class="error"></div>
+          </div>
+        <div class="button">
+          <button type="submit" class="btn btn-dark btn-block">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

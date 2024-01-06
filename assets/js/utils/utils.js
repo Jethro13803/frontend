@@ -5,7 +5,7 @@ setRouter();
 //Backend connections
 const url = "http://vehishop.test/"
 
-//Registration Notification
+// Notification
 function successNotification(message = "", seconds = 0){
     document.querySelector(".alert-success").classList.remove("d-none");
     document.querySelector(".alert-success").classList.add("d-block");
@@ -20,6 +20,29 @@ function successNotification(message = "", seconds = 0){
     }
 }
 
+//for the one who has access to the main UI
+async function getLoggedUser(){
+    const response = await fetch(url + "api/profile/show", {
+        headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+    });
+
+    if(response.ok){
+        const json = await response.json(); 
+
+        if(document.getElementById("branch_id")){
+            document.getElementById("branch_id").value = json.customerID;
+        }
+
+    }else {
+        const json = await response.json();
+       
+        alert(json.message, 10)
+    }
+}
+//Notification
 function ErrorNotification(message = "", seconds = 0){
     document.querySelector(".alert-danger").classList.remove("d-none");
     document.querySelector(".alert-danger").classList.add("d-block");
@@ -136,4 +159,4 @@ const validateInputs = () => {
 };
 
 
-export {url, successNotification, ErrorNotification, validateInputs};
+export {url, successNotification, ErrorNotification, validateInputs, getLoggedUser};

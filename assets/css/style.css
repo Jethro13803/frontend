@@ -9,6 +9,136 @@ figure, header, nav, section, article, aside, footer, figcaption {
   border: 0;
   outline: 0;
 }
+form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0 12px 0;
+}
+form .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 2px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.btn1 input{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 15px;
+}
+
+.btn1 input::-webkit-file-upload-button{
+  background: linear-gradient(blue, black);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+
+
+.input-box input:focus{
+  outline: 0;
+}
+.input-box.success input{
+  border-color: green;
+}
+.input-box.error input{
+  border-color: red;
+}
+.input-box .error{
+  color: red;
+  font-size: 10px;
+  height: 13px;
+}
+
+
+.modal-title{
+margin-left: 40%;
+font-size: 50px;
+}
+
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn{
+  background-color: #ed563b;
+}
+.btn:hover{
+  background-color: black;
+  color: white;
+}
+
+.button {
+  /* border: 5px solid black; */
+margin-left: 20rem;
+margin-top: 19px;
+height: 100%;
+
+}
+
+.button .btn2{
+width: 500px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .clearfix:after {
   content: ".";
@@ -789,6 +919,7 @@ Our Classes
 }
 
 
+
 /* 
 ---------------------------------------------
 schedule
@@ -927,12 +1058,15 @@ trainers
   border-radius: 5px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
   padding: 15px;
-  margin-bottom: 30px;
+  height: 100%;
 }
+
+
 
 #trainers .trainer-item img {
   width: 100%;
   border-radius: 5px;
+  height: 200px;
 }
 
 #trainers .trainer-item span {
@@ -945,7 +1079,7 @@ trainers
 }
 
 #trainers .trainer-item h4 {
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 600;
   color: #232d39;
   letter-spacing: 0.5px;

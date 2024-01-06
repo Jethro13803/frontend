@@ -5,6 +5,8 @@ const loginForm = document.getElementById('loginForm');
 
 loginForm.onsubmit = async (e) => {
     e.preventDefault();
+
+    console.log("hdAUHQUWCHEUQWH")
     
   //  validateInputs();
 

@@ -1,4 +1,3 @@
-
 import { url, successNotification, ErrorNotification, validateInputs } from "../utils/utils.js";
 
 const signUpForm = document.getElementById('signUpForm');
@@ -10,9 +9,12 @@ signUpForm.onsubmit = async (e) => {
 
     document.querySelector("#signUpForm button").disabled = true;
     document.querySelector("#signUpForm button").innerHTML = `
+    <div class="col-sm-12 d-flex justify-content-center align-items-center" >
     <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>`;
+        <span class="visually-hidden"></span>
+    </div>
+    <b class="ms-2">Loading Cars...</b>
+</div>`;
 
     const formData = new FormData(signUpForm);
 
