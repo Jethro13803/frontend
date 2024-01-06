@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: url(/assets/images/login&register/register\ background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background: url(/assets/images/login&register/Create\ Account\ background.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-content: center;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  color: #fff;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0 12px 0;
+}
+form .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 2px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus{
+  outline: 0;
+}
+.input-box.success input{
+  border-color: green;
+}
+.input-box.error input{
+  border-color: red;
+}
+.input-box .error{
+  color: red;
+  font-size: 10px;
+  height: 13px;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+.button{
+   height: 45px;
+   margin: 35px 0
+ }
+.button button{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: rgb(255, 255, 255), 30px;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background:  transparent;
+ 
+ }
+ form .button button:hover{
+   transform: scale(0.95); 
+  background: linear-gradient(-375deg,rgb(11, 11, 49), red, black);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+ .alert {
+  color: rgb(162, 255, 125);
+  display: block;
+  font: 25px bold;
+  border-radius: 50px;
+  width: 450px;
+  margin-left: 100px;
+  margin-top: 25px;
+}
+
+.alert-error{
+  color: rgb(255, 34, 34);
+  display: block;
+  font: 25px bold;
+  border-radius: 50px;
+  width: 600px;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.goto{
+  margin-top: 10px;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  /* background: rgb(17, 2, 79);
+  border-radius: 15px; */
+}
+
+.goto a{
+  margin-left: 10px;
+  color: rgb(170, 173, 157);
+  text-decoration: underline;
+  font-size: 17px;
+}
+
+.goto a:hover{
+  transform: scale(0.95);
+  color: #71b7e6;
+}

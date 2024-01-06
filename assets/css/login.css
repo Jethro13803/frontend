@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background: url(/assets/images/login&register/login\ background.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    place-content: center;
+    height: 100vh;
+    display: flex;
+    padding: 10px;
+}
+.container{
+    background: url(/assets/images/login&register/login\ background\ \(2\).jpg);
+    background-size: cover;
+    padding: 20px 40px;
+    margin-top: 130px;
+    border-radius: 40px;
+    background-position: center;
+    height: 400px;
+    text-align: center;
+    justify-content: center;
+    width: 320px;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 0;
+    
+  }
+  
+  /* Avatar image */
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+    color: white;
+  }
+.user{
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+
+}
+.container input{
+    width: 300px;
+    height: 30px;
+    outline: none;
+    border: 1px solid silver;
+    background: transparent;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 5px; 
+    color: white;
+}
+.container input:hover{
+   background: white;
+   color: black;
+}
+.but{
+   padding: 10px 30px;
+   margin-bottom: 10px;
+   font-weight: bold;
+   background-color: beige;
+   border-radius: 20px;
+}
+.but:hover{
+    color: black;
+    transform: scale(0.95);
+    background-color: rgb(231, 141, 23);
+}
+.reg{
+    margin-top: 0;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: bisque;
+}
+
+.input-box input:focus{
+    outline: 0;
+}
+.input-box.success input{
+border-color: green;
+}
+.input-box.error input{
+border-color: red;
+}
+.input-box .error{
+color: red;
+font-size: 10px;
+height: 13px;
+}
+
+.alert {
+    color: rgb(162, 255, 125);
+    width:300px;
+    margin-right:auto;
+    margin-left:auto;
+  }
+  
+  .alert-error{
+    color: rgb(255, 34, 34);
+    width:300px;
+   margin-right:auto;
+   margin-left:auto;
+  }

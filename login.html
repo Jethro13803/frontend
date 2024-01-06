@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/auth/login.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-success d-none" role="alert"></div>
+        <div class="alert-error alert-danger d-none" role="alert"></div>
+        <form id="loginForm">
+            <div class="imgcontainer">
+                <img src="/assets/images/login&register/user1.png" alt="Avatar" class="avatar">
+              </div>
+            <div class="user">Enter Email</div>
+            <div id="name" class="input-box">
+                <input type="text" name="email" id="email" placeholder="Enter your valid email"> <br>
+                <div class="error"></div>
+            </div>
+            
+            <div class="user">Enter Password</div>
+            <div id="pass" class="input-box">
+                <input type="password" name="password" id="password" placeholder="Enter your password"><br>
+                <div class="error"></div>
+            </div>
+            
+            <button type="submit" class="but">Login</button>
+            <br>
+            <a href="/registration.html" class="reg">Don't have an account? Sign Up!</a>
+        </form>
+    </div>
+</body>
+</body>
+</html>
