@@ -23,9 +23,9 @@ signUpForm.onsubmit = async (e) => {
 
     const formData = new FormData(signUpForm);
 
-    // List key/value pairs ....validation alert to track the functionality 
+    // List key/value pairs....validation alert to track the functionality 
 for(let [name, value] of formData) {
-    alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
+    console.log(`${name} = ${value}`); // key1 = value1, then key2 = value2
   }
 
     const response = await fetch(url + "api/cars", {
@@ -65,7 +65,7 @@ for(let [name, value] of formData) {
 
     }
     
-    // document.querySelector("#signUpForm button").disabled = false;
-    // document.querySelector("#signUpForm button").innerHTML = `Create Account`;
+    document.querySelector("#signUpForm button").disabled = false;
+    document.querySelector("#signUpForm button").innerHTML = `Submit`;
 };
 

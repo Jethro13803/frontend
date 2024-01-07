@@ -17,9 +17,22 @@ async function getCar(){
         json.forEach(element => {
             container += `<div class="col-lg-4">
                 <div class="trainer-item">
-                <div class="image-thumb">
-                        
-                    </div>
+                <div class="card" data_id="${element.carID}></div>
+                <div class="image-thumb1">
+
+                <nav class="navbar">
+                    <ul>
+                        <li>
+                        <button type="button" class="btn btn-outline-secondary btn -sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                            <ul>
+                                <li><a href="#" class="edt" id="button_edit" data_id="${element.carID}">Edit</a></li>
+                                <li><a href="#" class="edt" id="button_delete" data_id="${element.carID}">Delete</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                </div>
                     <div class="image-thumb">
                         <img src="${url}/storage/${element.imageURL}">
                     </div>
@@ -51,6 +64,10 @@ async function getCar(){
         });
 
         document.getElementById("getCar").innerHTML = container;
+        
+        document.querySelectorAll("#button_delete").forEach((element) => {
+            element.addEventListener("click", deletion);
+        });
 
     }else {
         const json = await response.json();
@@ -58,5 +75,43 @@ async function getCar(){
         alert(json.message)
     }
 }
+
+
+
+
+const deletion = async (e) => {
+    if(confirm("Are you sure you want to delete this item?"))
+    {
+        const id = e.target.getAttribute("data_id");
+
+
+        // document.querySelector(`.trainer-item[data_id]`).style.backgroundColor = "red";
+        const response = await fetch(url + "api/cars/" + id, {
+            method: "DELETE",
+            headers: {
+                Accept: "application/json",
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            }
+    
+        });
+
+        if(response.ok)
+        {
+            const json = await response.json();
+            console.log(json);
+
+            document.querySelector(`.trainer-item[data_id = "${id}"]`).remove();
+        }else{
+            alert("Unable to delete");
+            document.querySelector(`.trainer-item[data_id] = "${id}"]`).style.backgroundColor = "white";
+
+        }
+    }
+
+}
+
+
+
+
 
 export {getCar};

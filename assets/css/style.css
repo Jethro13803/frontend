@@ -84,9 +84,10 @@ font-size: 50px;
 
 .btn{
   background-color: #ed563b;
+  border-radius: 0%;
 }
 .btn:hover{
-  background-color: black;
+  background-color: rgb(90, 79, 76);
   color: white;
 }
 
@@ -1429,4 +1430,51 @@ a {
 a:focus,
 a:hover {
   color: #f9735b;
+}
+
+.navbar {
+  background-color: #fff;
+  position: relative;
+  z-index: 999;
+  padding: 0px;
+
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar li a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* Style the dropdown menu */
+.navbar ul ul {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.navbar ul ul li {
+  display: block;
+}
+
+.navbar li:hover ul {
+  display: block;
+  /* position: fixed; */
+}
+
+/* Change the background color of dropdown links on hover */
+.navbar ul ul li a:hover {
+  background-color: #555;
 }
