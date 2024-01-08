@@ -25,7 +25,7 @@ signUpForm.onsubmit = async (e) => {
 
     // List key/value pairs....validation alert to track the functionality 
 for(let [name, value] of formData) {
-    console.log(`${name} = ${value}`); // key1 = value1, then key2 = value2
+    alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
   }
 
     const response = await fetch(url + "api/cars", {
@@ -54,7 +54,7 @@ for(let [name, value] of formData) {
 
         getCar();
 
-    }else if(response.status == 422 ){
+    }else{
         const json = await response.json();
        // alert(json.message)
        
