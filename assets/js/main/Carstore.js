@@ -10,7 +10,8 @@ const signUpForm = document.getElementById('signUpForm');
 signUpForm.onsubmit = async (e) => {
     e.preventDefault();
 
-    console.log("anoooo naman niiiii");
+    //console.log("anoooo naman niiiii");
+
 
     document.querySelector("#signUpForm button").disabled = true;
     document.querySelector("#signUpForm button").innerHTML = `
@@ -24,11 +25,15 @@ signUpForm.onsubmit = async (e) => {
     const formData = new FormData(signUpForm);
 
     // List key/value pairs....validation alert to track the functionality 
-for(let [name, value] of formData) {
-    alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
-  }
+// for(let [name, value] of formData) {
+//     alert(`${name} = ${value}`); // key1 = value1, then key2 = value2
+//   }
 
-    const response = await fetch(url + "api/cars", {
+let response;
+
+if(update_id == "")
+{
+    response = await fetch(url + "api/cars", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -37,6 +42,22 @@ for(let [name, value] of formData) {
         body: formData,
 
     });
+}
+else
+{
+    formData.append("_method", "PUT")
+
+    response = await fetch(url + "api/cars/" + update_id, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+        body: formData,
+
+    });
+}
+
 
     if(response.ok){
         // const json = await response.json();
@@ -47,7 +68,9 @@ for(let [name, value] of formData) {
 
         signUpForm.reset();
 
-        successNotification("You have successfully added a car.",1);
+        update_id = ""; 
+
+        successNotification("You have successfully " + (update_id == "" ? "Created" : "Updated") + " a car.", 1);
 
         //automatically close the modal when the form is evaluated
         document.getElementById("modal_close").onclick();
@@ -64,8 +87,46 @@ for(let [name, value] of formData) {
         ErrorNotification(json.message, 3);
 
     }
+
+    update_id = "";
     
     document.querySelector("#signUpForm button").disabled = false;
     document.querySelector("#signUpForm button").innerHTML = `Submit`;
 };
 
+let update_id = "";
+
+const showData = async (id) => {
+
+   // document.querySelector(`.trainer-item`).style.backgroundColor = "yellow";
+    const response = await fetch(url + "api/cars/" +    id, {
+        headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+
+    });
+
+    if(response.ok)
+        {
+            const json = await response.json();
+            console.log(json);
+
+            update_id = json.carID;
+
+            document.getElementById("manufacturer").value = json.manufacturer;
+            document.getElementById("model").value = json.model;
+            document.getElementById("price").value = json.price;
+            document.getElementById("vin").value = json.vin;
+            document.getElementById("description").value = json.description;
+            
+        }else{
+            alert("Unable to Show");
+            //document.querySelector(`.trainer-item`).style.backgroundColor = "white";
+        }
+
+        document.querySelector("#signUpForm button").textContent = `Update`;
+};
+
+
+export {showData}

@@ -38,6 +38,8 @@ signUpForm.onsubmit = async (e) => {
 
         successNotification("You have successfully created an account.", 5)
 
+        window.location.pathname = "/login.html";
+
     }else if(response.status == 422 ){
         const json = await response.json();
        // alert(json.message)

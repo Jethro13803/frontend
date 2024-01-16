@@ -1,4 +1,5 @@
 import { url, successNotification, ErrorNotification } from "../utils/utils.js";
+import { showData } from "./Carstore.js";
 
 getCar();
 
@@ -65,6 +66,10 @@ async function getCar(){
 
         document.getElementById("getCar").innerHTML = container;
         
+        document.querySelectorAll("#button_edit").forEach((element) => {
+            element.addEventListener("click", editaction);
+        });
+
         document.querySelectorAll("#button_delete").forEach((element) => {
             element.addEventListener("click", deletion);
         });
@@ -76,16 +81,13 @@ async function getCar(){
     }
 }
 
-
-
-
 const deletion = async (e) => {
     if(confirm("Are you sure you want to delete this item?"))
     {
         const id = e.target.getAttribute("data_id");
 
 
-        // document.querySelector(`.trainer-item[data_id]`).style.backgroundColor = "red";
+         document.querySelector(`.trainer-item`).style.backgroundColor = "red";
         const response = await fetch(url + "api/cars/" + id, {
             method: "DELETE",
             headers: {
@@ -97,21 +99,26 @@ const deletion = async (e) => {
 
         if(response.ok)
         {
-            const json = await response.json();
-            console.log(json);
+            //const json = await response.json();
+            //  console.log(json);
 
-            document.querySelector(`.trainer-item[data_id = "${id}"]`).remove();
+            document.querySelector(`.trainer-item`).remove();
         }else{
             alert("Unable to delete");
-            document.querySelector(`.trainer-item[data_id] = "${id}"]`).style.backgroundColor = "white";
-
+            document.querySelector(`.trainer-item`).style.backgroundColor = "white";
         }
     }
 
 }
 
+const editaction = async (e) => {
+    const id = e.target.getAttribute("data_id");
+
+    showData(id);
+ //open modal when clicked. 
+ document.getElementById("myBtn").onclick();
 
 
-
+}
 
 export {getCar};
