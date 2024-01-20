@@ -18,6 +18,7 @@ function setRouter(){
         case "/team.html":
         case "/testimonials.html":
         case "/terms.html":
+        case "/order.html":
             if(!localStorage.getItem("token")){
                 window.location.pathname = "/login.html"
             }

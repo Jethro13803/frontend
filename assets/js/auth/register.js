@@ -4,7 +4,7 @@ const signUpForm = document.getElementById('signUpForm');
 
 signUpForm.onsubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Tskkkkk");
     validateInputs();
 
     document.querySelector("#signUpForm button").disabled = true;

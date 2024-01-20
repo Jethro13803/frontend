@@ -1,4 +1,7 @@
 import { url } from "../utils/utils.js";
+import { getCar } from "./cars.js";
+
+getCar();
 
 const logout = document.getElementById("logout")
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link href="assets/css/register.css" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+<script src="/assets/js/main/order.js" type="module"></script>
+
+<body>
+   
+    <div class="container" id="container2">
+        <h1 class="title">BUY</h1>
+    
+        <div class="alert alert-success d-none" role="alert"></div>
+        <div class="alert-error alert-danger d-none" role="alert"></div>
+    
+        <!-- <div class="alert success d-none" id="popup"></div>
+          <div class="alert-error Error d-none" id="popup"></div> -->
+        <div class="content" id="content">
+          <form id="orderForm">
+            <div class="user-details">
+                
+                
+                <div class="input-box">
+                    <input type="hidden" name="carID" id="carID">
+                    <input type="hidden" name="customerID" id="customerID">  
+                </div>
+
+              <div class="input-box">
+                <span class="details">Status</span>
+                <select name="status" id="status">
+                    <option name= "status" id="status" value="Fully Paid">Fully Paid</option>
+                    <option name= "status" id="status" value="Partially Paid">Partially Paid</option>
+                  </select>
+              </div>
+              <div class="input-box">
+                <span class="details">Quantity</span>
+                <div id="name" class="input-box">
+                    <input type="number" name="quantity" id="quantity" min="0" placeholder="Enter Quantity"> <br>
+                    <div class="error"></div>
+                </div>
+              </div>
+              <div class="input-box">
+                <span class="details" ></span>
+                <div id="name" class="input-box">
+                    <input type="hidden" id="price" name = "price">
+                    <div class="error"></div>
+                </div>
+              <!-- <div class="input-box">
+                <span class="details">Sales Total</span>
+                <div id="name" class="input-box">
+                    <input type="text" required name="sales_total" id="sales_total">
+                    <div class="error"></div>
+                </div> -->
+              <div class="input-box">
+                <span class="details">Payment method</span>
+                <select name="payment_method" id="payment_method">
+                    <option name= "payment_method" id="payment_method" value="Cash">Cash</option>
+                    <option name= "payment_method" id="payment_method" value="E-money">E-money</option>
+                  </select>
+              </div>
+            </div>
+            <div class="button">
+              <button type="submit" class="btn btn-dark btn-block">Order Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+          <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/mixitup.js"></script> 
+    <script src="assets/js/accordions.js"></script>
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+</html>
+

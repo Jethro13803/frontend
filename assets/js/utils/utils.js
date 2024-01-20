@@ -35,6 +35,11 @@ async function getLoggedUser(){
         if(document.getElementById("branch_id")){
             document.getElementById("branch_id").value = json.customerID;
         }
+        else if(document.getElementById("carID") || document.getElementById("customerID")){
+            document.getElementById("carID").value = json.customerID;
+            document.getElementById("customerID").value = json.customerID;
+        }
+
 
     }else {
         const json = await response.json();

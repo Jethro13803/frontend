@@ -35,7 +35,7 @@ contactForm.onsubmit = async (e) => {
 
         contactForm.reset();
 
-        successNotification("You have successfully created an account.", 5)
+        successNotification("You have successfully sent your message.", 5)
 
     }else if(response.status == 422 ){
         const json = await response.json();
@@ -44,7 +44,7 @@ contactForm.onsubmit = async (e) => {
     }
     
     document.querySelector("#contactForm button").disabled = false;
-    document.querySelector("#contactForm button").innerHTML = `Submit`;
+     document.querySelector("#contactForm button").innerHTML = `Send Message`;
 };
 
 
